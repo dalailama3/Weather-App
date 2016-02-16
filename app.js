@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var TempUnit = "F";
+  var TempUnit = " °F";
   var TempUrl = "&units=imperial";
   var WindUnit = "miles/hour"
   var WeatherType;
@@ -66,7 +66,7 @@ $(document).ready(function() {
     $(".weather-description img").attr("src", iconUrl);
 
     $(".wind").text("Wind " + wind + " " + WindUnit);
-    $("div.temp").text(temp + "°" + TempUnit);
+    $("div.temp").text(temp + TempUnit);
   };
 
   $(".nonactive").on("click", function (event) {
@@ -76,15 +76,15 @@ $(document).ready(function() {
     $(event.currentTarget).removeClass("nonactive").addClass("active");
 
     if ($(event.currentTarget).attr("id") === "fahrenheit") {
-      TempUnit = "F";
+      TempUnit = " °F";
       TempUrl = "&units=imperial";
       WindUnit = "miles/hour";
     } else if ($(event.currentTarget).attr("id") === "celsius") {
-      TempUnit = "C";
+      TempUnit = " °C";
       TempUrl = "&units=metric";
       WindUnit = "meters/second";
     } else {
-      TempUnit = "K";
+      TempUnit = " K";
       TempUrl = '';
       WindUnit = "meters/second";
     }
